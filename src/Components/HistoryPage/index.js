@@ -12,7 +12,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 
 import dayjs from "dayjs";
-
+//displays calendar
 export default function HistoryPage() {
 
   const { token } = useContext(UserContext);

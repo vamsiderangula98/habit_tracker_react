@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate,Link } from "react-router-dom";
 
-
+//signup page display
 export default function SignUpPage() {
 
   let navigate = useNavigate();

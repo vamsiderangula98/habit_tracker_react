@@ -55,6 +55,7 @@ const url=process.env.API_URL;
     // eslint-disable-next-line
   }, reload);
 
+  //displaying habits list 
   function handleHabitsContent() {
 
     if (habitsData.length === 0) {
@@ -74,7 +75,7 @@ const url=process.env.API_URL;
     }
 
   }
-
+//add new habit
   function addHabit(event) {
 
     event.preventDefault()
@@ -92,7 +93,7 @@ const url=process.env.API_URL;
     request.catch(requestFail)
 
   }
-
+//delete habit
   function removeHabit(id) {
 
     const confirmBox = window.confirm("Do you want to delete Habit?")
@@ -145,7 +146,7 @@ const url=process.env.API_URL;
   });
 
 
-
+//display new form for new habit create.
   function handleCreationForm() {
 
     return (
@@ -209,7 +210,7 @@ const url=process.env.API_URL;
 
 }
 
-
+// new habit box style
 const NewHabitBox = styled.section`
 
 width: 500px;
@@ -266,7 +267,7 @@ height: 100%;
 padding: 76px 0px;
 
 `
-
+//habits list style
 const HabitsList = styled.div`
 
 padding: 0px 19px 78px 19px;

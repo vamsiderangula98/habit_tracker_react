@@ -14,7 +14,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 
 import UserHistoryPageHabit from "../UserHistoryHabit";
-
+//display details of particular day selected
 export default function HistoryDatePage() {
 
   const { token } = useContext(UserContext);

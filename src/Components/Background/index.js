@@ -8,7 +8,7 @@ export default function Background() {
   )
 
 }
-
+//styling background
 const BackgroundStyled = styled.div`
 
 width: 100%;

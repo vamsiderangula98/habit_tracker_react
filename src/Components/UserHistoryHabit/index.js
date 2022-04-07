@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import checkIcon from "../../assets/check-icon.svg"
 
-
+//incomplete habit details 
 export default function UserHistoryPageHabit(Props) {
 
   return (

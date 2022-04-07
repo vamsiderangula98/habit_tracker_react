@@ -13,7 +13,7 @@ import axios from "axios";
 
 import dayjs from "dayjs";
 import "dayjs/locale/en";
-
+//displays list of habits of present day
 export default function TodayPage() {
   const { token, percentageToday, setPercentageToday } =
     useContext(UserContext);

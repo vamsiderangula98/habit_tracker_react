@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import WeekdayBox from "../WeekdayBox";
 import trashCanIcon from "../../assets/trashcan-icon.svg"
-
+//newly added habit
 export default function UserSavedHabit(Props) {
   
   return (

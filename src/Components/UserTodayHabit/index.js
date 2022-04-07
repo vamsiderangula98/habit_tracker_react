@@ -5,7 +5,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { useState } from "react";
 import UserContext from "../../contexts/UserContext";
-
+//habit of present day
 export default function UserTodayHabit(Props) {
 
   let recordValidation = (Props.data.currentSequence >= Props.data.highestSequence && Props.data.highestSequence !== 0)

@@ -9,14 +9,14 @@ export default function ConfirmButton(Props) {
       disabled={Props.isLoading}
     >
       {Props.isLoading ?
-        "..."
+        "Loading..."
       : 
         Props.text
       }
     </ButtonStyled>
   );
 }
-
+//styling the button
 const ButtonStyled = styled.button`
   width: 303px;
   height: 45px;
