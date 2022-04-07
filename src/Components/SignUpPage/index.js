@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import LogoMark from "./LogoMark";
-import InputBox from "./Input";
-import ConfirmButton from "./ConfirmButton";
+import LogoMark from "../LogoMark";
+import InputBox from "../Input";
+import ConfirmButton from "../ConfirmButton";
 import axios from "axios";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';

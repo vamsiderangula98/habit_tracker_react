@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Header from "../Header";
 import Menu from "../Menu";
-import Background from "../../GenericComponents/Background";
+import Background from "../Background";
 
 import UserTodayHabit from "../UserTodayHabit";
 

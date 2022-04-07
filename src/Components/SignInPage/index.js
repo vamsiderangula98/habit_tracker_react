@@ -1,6 +1,6 @@
-import InputBox from "./Input";
-import ConfirmButton from "./ConfirmButton";
-import LogoMark from "./LogoMark";
+import InputBox from "../Input";
+import ConfirmButton from "../ConfirmButton";
+import LogoMark from "../LogoMark";
 
 import React, { useState, useContext, useEffect } from "react";
 
