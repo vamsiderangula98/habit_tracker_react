@@ -1,5 +1,5 @@
-import Header from "../Header"
-import Menu from "../Menu";
+import Header from "../Header";
+import Footer from "../Footer";
 import Background from "../Background";
 import InputBox from "../Input";
 import WeekdayBox from "../WeekdayBox";
@@ -44,7 +44,7 @@ const url=process.env.API_URL;
         Authorization: `Bearer ${token.token}`
       }
     });
-
+   
     request.then(answer => {
       setHabitsData(answer.data);
 
@@ -80,8 +80,8 @@ const url=process.env.API_URL;
     event.preventDefault()
 
     setLoading(true)
-
-    const request = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits", newHabit, {
+const url=process.env.API_URL;
+    const request = axios.post(`${url}/habits`, newHabit, {
       headers: {
         Authorization: `Bearer ${token.token}`
       }
@@ -101,8 +101,9 @@ const url=process.env.API_URL;
 
 
       setLoading(true)
+      const url=process.env.API_URL;
 
-      const request = axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, {
+      const request = axios.delete(`${url}/habits/${id}`, {
         headers: {
           Authorization: `Bearer ${token.token}`
         }
@@ -191,15 +192,17 @@ const url=process.env.API_URL;
       <Header></Header>
       
       <TitleWrapper>
-        <h1>My Habits</h1>
-        <AddButton onClick={() => { setCreationMode(true) }}>+</AddButton>
+        
+        <AddButton onClick={() => { setCreationMode(true) }}>Add Habit</AddButton>
       </TitleWrapper>
       <HabitsList>
+      <h2>My Habits</h2>
         {creationMode === true ? handleCreationForm() : ""}
         {handleHabitsContent()}
       </HabitsList>
-      <Menu></Menu>
+   
       <Background></Background>
+      <Footer></Footer>
     </HabitsStyled>
   )
 
@@ -221,7 +224,7 @@ padding: 18px;
 display: flex;
 flex-wrap: wrap;
 flex-direction: column;
-
+left:37%;
 position: relative;
 
 ${props => props.isLoading ? "pointer-events: none;" : ""}
@@ -260,37 +263,14 @@ const HabitsStyled = styled.section`
 width: 100%;
 height: 100%;
 
-padding: 77px 0px;
+padding: 76px 0px;
 
 `
 
 const HabitsList = styled.div`
 
-padding: 0px 18px 80px 18px;
-
-p{
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 22px;
-
-color: #666666;
-}
-
-`
-
-const TitleWrapper = styled.div`
-
-width:100%;
-height: 75px;
-
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-padding: 0px 18px;
-
-h1{
+padding: 0px 19px 78px 19px;
+h2{
   font-style: normal;
 font-weight: normal;
 font-size: 22.976px;
@@ -298,11 +278,34 @@ line-height: 29px;
 
 color: darkgreen;
 }
+p{
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+
+color: black;
+}
+
+`
+
+const TitleWrapper = styled.div`
+
+width:100%;
+height: 74px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction:column;
+padding: 0px 19px;
+
+
 
 `
 const AddButton = styled.div`
 
-width: 58px;
+width: 158px;
 height:35px;
 left: 317px;
 top: 92px;
@@ -319,10 +322,10 @@ justify-content:center;
 
 font-style: normal;
 font-weight: normal;
-font-size: 26.976px;
+font-size: 26px;
 line-height: 34px;
 text-align: center;
-
-color: #FFFFFF;
+align-self:center;
+color:wheat;
 
 `

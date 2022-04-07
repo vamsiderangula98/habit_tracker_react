@@ -57,13 +57,13 @@ mark{
 const CheckBox = styled.div`
 
 
-width: 69px;
-height: 69px;
+width: 68px;
+height: 68px;
 right: 13px;
 top: 13px;
 position: absolute;
 
-background: ${Props => !Props.done ? "#E75766" : "#8FC549"};
+background: ${Props => !Props.done ? "#E75766" : "darkpink"};
 border: none;
 box-sizing: border-box;
 border-radius: 5px;

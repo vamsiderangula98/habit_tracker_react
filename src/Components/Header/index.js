@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <HeaderStyled>
        <p>Habit Tracking</p>
-       <Menu/>
+       <Menu></Menu>
       <UserPicture>
        
        <img src={token.image} alt="Avatar" /> 

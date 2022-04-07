@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Header from "../Header";
+import Footer from "../Footer";
 import Background from "../Background";
 
 import UserTodayHabit from "../UserTodayHabit";
@@ -32,7 +33,8 @@ export default function TodayPage() {
         },
       }
     );
-
+    
+   
     request.then((answer) => {
       setTodayHabitData(answer.data);
       setPercentageToday(nanPreventEvent(answer.data));
@@ -61,27 +63,34 @@ export default function TodayPage() {
     }
   }
 
-  let today = dayjs().locale("en").format("dddd, DD/MM");
+  let today = dayjs().locale("en").format("dddd, DD/MM/YYYY");
 
   return (
     <TodayStyled>
       <Header />
       <TitleWrapper>
-        <h1>{today}</h1>
+        <h1><span>Date:</span>{today}</h1>
+     
+      <br/>
+     
+
         {percentageToday === 0 ? (
-          <p>completed yet</p>
+          <p> No Habits Completed yet</p>
         ) : (
           <p>
-            <mark>{percentageToday}% of complete habits</mark>
+            <mark>Total Habits Completed(in %):{percentageToday}%</mark>
           </p>
         )}
+        <h2>List of Habits today:</h2>
       </TitleWrapper>
       <HabitsList>
+        
         {todayHabitData.map((el, id) => (
           <UserTodayHabit key={id} data={el} reloadFunction={setReload} />
         ))}
       </HabitsList>
       <Background />
+      <Footer></Footer>
     </TodayStyled>
   );
 }
@@ -93,28 +102,31 @@ const TodayStyled = styled.div`
   padding: 77px 0px;
 `;
 const HabitsList = styled.div`
-  padding: 24px 18px 80px 18px;
-
+padding: 24px 18px 80px 18px;
+min-height:60vh;
+position:fixed;
+top:41vh;
+left:11vw;
+min-width:25%;
   p {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
-
     color: #666666;
   }
 `;
 
 const TitleWrapper = styled.div`
   width: 100%;
-  height: 75px;
+  height: 92px;
 
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: flex-start;
 
-  padding: 24px 18px;
+  padding: 29px 18px;
 
   h1 {
     font-style: normal;
@@ -122,18 +134,34 @@ const TitleWrapper = styled.div`
     font-size: 22.976px;
     line-height: 29px;
     color: #126ba5;
+    width:450px;
+
+  }
+  h2{
+padding:10px 0px;
+    color:purple;
+    font-size:2rem!important;
   }
 
+  span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 22px;
+    color: orange!important;
+   
+  }
   p {
     font-style: normal;
     font-weight: normal;
     font-size: 17.976px;
     line-height: 22px;
-    color: darkgreen!important;
+    color: navyblue;
+   
   }
 
   mark {
     all: unset;
-    color: #8fc549;
+    color: brown;
   }
 `;

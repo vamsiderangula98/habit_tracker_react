@@ -23,13 +23,15 @@ export default function UserTodayHabit(Props) {
     if (checked) {
      
       request = axios.post(`${url}/habits/${Props.data.id}/uncheck`, {}, { headers: { Authorization: `Bearer ${token.token}` } })
-
+    
+   
     }
 
     else {
     
 
       request = axios.post(`${url}/habits/${Props.data.id}/check`, {}, { headers: { Authorization: `Bearer ${token.token}` } })
+
 
     }
 

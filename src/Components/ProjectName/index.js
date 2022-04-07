@@ -1,18 +1,18 @@
 import styled from "styled-components";
-export default function LogoMark() {
+export default function ProjectName() {
 
   return (
-    <LogoMarkStyled>
+    <ProjectNameStyled>
     <div>
      Habit Tracking
       </div>
    
-    </LogoMarkStyled>
+    </ProjectNameStyled>
   )
 
 }
 
-const LogoMarkStyled = styled.div`
+const ProjectNameStyled = styled.div`
 
 div{
   color:purple;

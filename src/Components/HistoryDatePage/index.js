@@ -1,6 +1,7 @@
 
 import Header from "../Header"
-import Menu from "../Menu";
+import Footer from "../Footer";
+
 import Background from "../Background";
 import styled from "styled-components";
 import { useContext } from "react";
@@ -29,7 +30,7 @@ export default function HistoryDatePage() {
         Authorization: `Bearer ${token.token}`
       }
     });
-
+   
     request.then(answer => requestSuccess(answer));
 
     // eslint-disable-next-line
@@ -86,8 +87,9 @@ export default function HistoryDatePage() {
       </HabitsList>
 
 
-      <Menu></Menu>
+     
       <Background></Background>
+      <Footer></Footer>
     </HistoryStyled>
   )
 
@@ -143,7 +145,9 @@ mark{
 const HabitsList = styled.div`
 
 padding: 24px 18px 80px 18px;
-
+position:fixed;
+left:25%;
+top:45%;
 p{
 font-style: normal;
 font-weight: normal;

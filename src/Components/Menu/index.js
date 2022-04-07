@@ -18,10 +18,10 @@ export default function Menu() {
         <h1> My Habits</h1>
       </Link>
       <Link style={{ textDecoration: 'none' }} to="/today">
-        <TodayProgressBar>
-          <h1 className="progress-bar-text">Today</h1>
+        <TodayBar>
+          <h1 className="bar-text">Today</h1>
         
-        </TodayProgressBar>
+        </TodayBar>
       </Link>
       <Link style={{ textDecoration: 'none' }} to="/history">
         <h1>History</h1>
@@ -33,47 +33,45 @@ export default function Menu() {
 
 const HeaderStyled = styled.nav`
 
-width: 100%;
-height: 70px;
+width: 60%;
+height: 69px;
 border-top:2px solid grey;
-background: aquamarine;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 position:fixed;
-bottom: 0px;
-left: 0px;
+left:32%;
+top:0px;
 z-index:10;
-padding: 0px 18px;
+padding: 0px 29px;
 display: flex;
 align-items: center;
-justify-content: space-between;
+justify-content: flex-end;
 
 h1{
 font-style: normal;
 font-weight: normal;
-font-size: 17.976px !important;
-line-height: 22px;
+font-size: 17px !important;
+line-height: 20px;
 text-align: center;
-color: brown !important;
+color: greenyellow !important;
 }
 
 `
-const TodayProgressBar = styled.div`
+const TodayBar = styled.div`
 
-width: 91px;
-height: 91px;
+width: 88px;
+height: 88px;
 position: relative;
-bottom: 20px;
 
-.progress-bar-text{
+.bar-text{
   position: absolute;
 font-style: normal;
 font-weight: normal;
 font-size: 17.976px;
 line-height: 22px;
 text-align: center;
-color: yellow !important;
+color: greenyellow !important;
 bottom: 34px;
-left:23px;
+left:20px;
 }
 
 `

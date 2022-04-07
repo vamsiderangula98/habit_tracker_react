@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoMark from "../LogoMark";
+import LogoMark from "../ProjectName";
 import InputBox from "../Input";
 import ConfirmButton from "../ConfirmButton";
 import axios from "axios";
@@ -27,8 +27,11 @@ export default function SignUpPage() {
     event.preventDefault()
 
     setLoading(true)
-const url=process.env.API_URL;
-    const request = axios.post(`${url}/auth/sign-up`, signUpObj)
+    const url=process.env.API_URL;
+    
+    const request = axios.post(`${url}/auth/sign-up`, signUpObj);
+
+
 
     request.then(requestSuccess);
 
@@ -64,7 +67,10 @@ const url=process.env.API_URL;
     <SignUp>
       <LogoMark></LogoMark>
       <form onSubmit={logUp}>
+        <h2><label htmlFor="email">Email</label>
+        </h2>
         <InputBox
+        id="email"
           type="email"
           placeholder=" Enter email"
           value={signUpObj.email}
@@ -73,7 +79,10 @@ const url=process.env.API_URL;
           stateKey="email"
           isLoading={loading}
         />
+         <h2><label htmlFor="password">Password</label>
+        </h2>
         <InputBox
+        id="password"
           type="password"
           placeholder=" Enter password"
           value={signUpObj.password}
@@ -82,7 +91,10 @@ const url=process.env.API_URL;
           stateKey="password"
           isLoading={loading}
         />
+         <h2><label htmlFor="userName">UserName</label>
+        </h2>
         <InputBox
+        id="userName"
           type="text"
           placeholder="Enter name"
           value={signUpObj.name}
@@ -91,7 +103,10 @@ const url=process.env.API_URL;
           stateKey="name"
           isLoading={loading}
         />
+         <h2><label htmlFor="imgurl">Image Link</label>
+        </h2>
         <InputBox
+        id="imgurl"
           type="url"
           placeholder="Add image"
           value={signUpObj.image}

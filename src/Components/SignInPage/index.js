@@ -1,6 +1,6 @@
 import InputBox from "../Input";
 import ConfirmButton from "../ConfirmButton";
-import LogoMark from "../LogoMark";
+import LogoMark from "../ProjectName";
 
 import React, { useState, useContext, useEffect } from "react";
 
@@ -80,6 +80,8 @@ export default function SignInPage(Props) {
   const url=process.env.API_URL;
 
   const request = axios.post(`${url}/auth/login`, signInObj);
+
+  
     request.then(requestSuccess);
 
     request.catch(requestFail)
@@ -122,7 +124,9 @@ export default function SignInPage(Props) {
     <SignInStyled>
       <LogoMark></LogoMark>
       <form onSubmit={logIn}>
+        <h2><label htmlFor="email">Email</label></h2>
         <InputBox
+        id="email"
         className="input-box"
           type="email"
           placeholder=" Enter email"
@@ -132,7 +136,9 @@ export default function SignInPage(Props) {
           stateKey="email"
           isLoading={loading}
         />
+          <h2><label htmlFor="password">Password</label></h2>
         <InputBox
+        id="password"
           type="password"
           placeholder="Enter password"
           value={signInObj.password}

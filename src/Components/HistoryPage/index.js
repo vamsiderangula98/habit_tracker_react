@@ -1,6 +1,6 @@
 
-import Header from "../Header"
-import Menu from "../Menu";
+import Header from "../Header";
+import Footer from "../Footer";
 import Background from "../Background";
 import styled from "styled-components";
 import Calendar from 'react-calendar'
@@ -29,7 +29,8 @@ export default function HistoryPage() {
         Authorization: `Bearer ${token.token}`
       }
     });
-
+   
+   
     request.then(answer => requestSuccess(answer));
 
     // eslint-disable-next-line
@@ -92,7 +93,7 @@ export default function HistoryPage() {
     <HistoryStyled>
       <Header></Header>
       <TitleWrapper>
-        <h1>History</h1>
+        <h1>Select Date for Habits Data History</h1>
       </TitleWrapper >
       <CalendarWrapper>
         <Calendar
@@ -106,8 +107,9 @@ export default function HistoryPage() {
 
         />
       </CalendarWrapper>
-      <Menu></Menu>
+  
       <Background></Background>
+      <Footer></Footer>
     </HistoryStyled>
   )
 
@@ -122,12 +124,14 @@ height: 100%;
 padding: 77px 0px;
 
 .react-calendar {
-  width: 335px;
+  width: 445px;
   max-width: 100%;
-  background: white;
+  background: aliceblue;
   font-family: 'Lexend Deca', sans-serif;
   line-height: 1.125em;
   border-radius: 10px;
+  position:fixed;
+  left:25%;
 }
 
 .react-calendar--doubleView {
