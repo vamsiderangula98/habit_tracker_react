@@ -17,18 +17,19 @@ export default function UserTodayHabit(Props) {
 
 
   function handleOnClick() {
-
+    const url=process.env.API_URL;
     let request;
 
     if (checked) {
-
-      request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${Props.data.id}/uncheck`, {}, { headers: { Authorization: `Bearer ${token.token}` } })
+     
+      request = axios.post(`${url}/habits/${Props.data.id}/uncheck`, {}, { headers: { Authorization: `Bearer ${token.token}` } })
 
     }
 
     else {
+    
 
-      request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${Props.data.id}/check`, {}, { headers: { Authorization: `Bearer ${token.token}` } })
+      request = axios.post(`${url}/habits/${Props.data.id}/check`, {}, { headers: { Authorization: `Bearer ${token.token}` } })
 
     }
 

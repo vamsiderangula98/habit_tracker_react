@@ -76,11 +76,10 @@ export default function SignInPage(Props) {
 
     event.preventDefault()
 
-    setLoading(true)
-    const url="https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit";
+    setLoading(true);
+  const url=process.env.API_URL;
 
-    const request = axios.post(`${url}/auth/login`, signInObj)
-      console.
+  const request = axios.post(`${url}/auth/login`, signInObj);
     request.then(requestSuccess);
 
     request.catch(requestFail)

@@ -1,7 +1,7 @@
 
 import Header from "../Header"
 import Menu from "../Menu";
-import Background from "../../GenericComponents/Background";
+import Background from "../Background";
 import styled from "styled-components";
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
@@ -22,8 +22,9 @@ export default function HistoryDatePage() {
 
 
   useEffect(() => {
+    const url=process.env.API_URL;
 
-    const request = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/history/daily`, {
+    const request = axios.get(`${url}/habits/history/daily`, {
       headers: {
         Authorization: `Bearer ${token.token}`
       }

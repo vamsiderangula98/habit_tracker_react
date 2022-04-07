@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Header from "../Header";
-import Menu from "../Menu";
 import Background from "../Background";
 
 import UserTodayHabit from "../UserTodayHabit";
@@ -24,9 +23,9 @@ export default function TodayPage() {
 
   useEffect(() => {
     setReload(false);
-
+    const url=process.env.API_URL;
     const request = axios.get(
-      `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today`,
+      `${url}/habits/today`,
       {
         headers: {
           Authorization: `Bearer ${token.token}`,

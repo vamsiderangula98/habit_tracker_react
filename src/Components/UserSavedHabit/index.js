@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import WeekdayBox from "../../GenericComponents/WeekdayBox";
+import WeekdayBox from "../WeekdayBox";
 import trashCanIcon from "../../assets/trashcan-icon.svg"
 
 export default function UserSavedHabit(Props) {

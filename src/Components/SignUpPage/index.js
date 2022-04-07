@@ -27,8 +27,8 @@ export default function SignUpPage() {
     event.preventDefault()
 
     setLoading(true)
-
-    const request = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up", signUpObj)
+const url=process.env.API_URL;
+    const request = axios.post(`${url}/auth/sign-up`, signUpObj)
 
     request.then(requestSuccess);
 
